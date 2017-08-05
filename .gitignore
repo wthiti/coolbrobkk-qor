@@ -1,1 +1,4 @@
-demo.db
+.DS_Store
+test.db
+public/assets/*
+public/favicon.ico
