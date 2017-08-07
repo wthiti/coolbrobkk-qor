@@ -1,16 +1,17 @@
 package main
 
 import (
-  "fmt"
-  "net/http"
+	"fmt"
+	"log"
+	"net/http"
 
-  _ "bitbucket.org/wthiti/coolbrobkk-qor/db"
-  "bitbucket.org/wthiti/coolbrobkk-qor/config/routes"
+	"bitbucket.org/wthiti/coolbrobkk-qor/config/routes"
+	_ "bitbucket.org/wthiti/coolbrobkk-qor/db"
 )
 
 func main() {
-  router := routes.Router()
+	router := routes.Router()
 
-  fmt.Println("Listening on: 9000")
-  http.ListenAndServe(":9000", router)
+	fmt.Println("Listening on: 9000")
+	log.Println(http.ListenAndServe(":9000", router))
 }
