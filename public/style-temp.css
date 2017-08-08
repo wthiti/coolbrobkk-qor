@@ -5,26 +5,36 @@ html {
 }
 
 body {
-  padding-top: 20px;
-  padding-bottom: 20px;
   font-family: 'Ubuntu Condensed', sans-serif;
   font-size: 14px;
 }
 
-.nav-text {
+.nav > li.active > a {
   padding-top: 7.5px;
   padding-bottom: 7.5px;
+  background-color: rgba(59,35,20,1);
+  border: 0px;
+  color: white
 }
 
-.nav > .active {
+.nav > li.active > a:hover {
   background-color: rgba(59,35,20,1);
   color: white;
+}
+
+.nav-tabs.nav-justified>li>a {
+  border: 0px;
+}
+
+.nav > li > a {
+  color: black;
 }
 
 .topnav {
   font-weight: bold;
   padding-top: 10px;
   padding-bottom: 10px;
+  margin-bottom: 0px;
   font-size: 20px;
 }
 

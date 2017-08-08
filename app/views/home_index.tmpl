@@ -1,48 +1,23 @@
-<body>
-  <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
-    <div class="container topnav">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-full">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      </div>
-      <div class="collapse navbar-collapse" id="navbar-full">
-        <ul class="nav nav-tabs nav-justified text-center">
-          <li class="nav-text active">Home</li>
-          <li>About Us</li>
-          <li>Our Process</li>
-          <li>Products</li>
-          <li>Sale Location</li>
-          <li>Contact Us</li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <div class="intro-header">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="intro-message text-center">
-            <div class="transbox">
-              <h1 id="count-down"></h1>
-              <div class="text-center time-label-parent"><span class="time-label">day(s)</span><span class="time-label">hour(s)</span><span class="time-label">minute(s)</span><span class="time-label">second(s)</span></div>
-            </div>
-            <div class="transbox-info">
-              <h3>NOW BREWING</h3>
-            </div>
-            <div class="social-network">
-              <div class="text-center">
-                <span><a href="http://www.instagram.com/coolbrobkk"><img src="/public/assets/img/instagram.png" class="social-media-icon" /></a></span>
-                <span><a href="http://www.facebook.com/coolbrobkk"><img src="/public/assets/img/facebook.png" class="social-media-icon" /></a></span>
-                <span><a href="https://line.me/R/ti/p/%40ysw8610b"><img src="/public/assets/img/line.png" class="social-media-icon" /></a></span>
-                <br />
-                <div class="social-network-text">
-                  @coolbrobkk
-                </div>
+<div class="intro-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="intro-message text-center">
+          <div class="transbox">
+            <h1 id="count-down"></h1>
+            <div class="text-center time-label-parent"><span class="time-label">day(s)</span><span class="time-label">hour(s)</span><span class="time-label">minute(s)</span><span class="time-label">second(s)</span></div>
+          </div>
+          <div class="transbox-info">
+            <h3>NOW BREWING</h3>
+          </div>
+          <div class="social-network">
+            <div class="text-center">
+              <span><a href="http://www.instagram.com/coolbrobkk"><img src="/public/assets/img/instagram.png" class="social-media-icon" /></a></span>
+              <span><a href="http://www.facebook.com/coolbrobkk"><img src="/public/assets/img/facebook.png" class="social-media-icon" /></a></span>
+              <span><a href="https://line.me/R/ti/p/%40ysw8610b"><img src="/public/assets/img/line.png" class="social-media-icon" /></a></span>
+              <br />
+              <div class="social-network-text">
+                @coolbrobkk
               </div>
             </div>
           </div>
@@ -50,33 +25,33 @@
       </div>
     </div>
   </div>
-  <!-- <script src="/bundle.js"></script> -->
+</div>
+<!-- <script src="/bundle.js"></script> -->
 
-  <script>
-    var countDownDate = new Date("Aug 23, 2017 13:00:00").getTime();
+<script>
+  var countDownDate = new Date("Aug 23, 2017 13:00:00").getTime();
 
-    var x = setInterval(function() {
-      var now = new Date().getTime();
-      var distance = countDownDate - now;
+  var x = setInterval(function() {
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
 
-      var days = Math.floor(distance / (1000*60*60*24) );
-      var hours = Math.floor((distance % (1000*60*60*24) / (1000*60*60) ));
-      var minutes = Math.floor((distance % (1000*60*60) / (1000*60) ));
-      var seconds = Math.floor((distance % (1000*60)) / 1000 );
+    var days = Math.floor(distance / (1000*60*60*24) );
+    var hours = Math.floor((distance % (1000*60*60*24) / (1000*60*60) ));
+    var minutes = Math.floor((distance % (1000*60*60) / (1000*60) ));
+    var seconds = Math.floor((distance % (1000*60)) / 1000 );
 
-      hours = hours < 10 ? "0" + hours : hours;
-      minutes = minutes < 10 ? "0" + minutes : minutes;
-      seconds = seconds < 10 ? "0" + seconds : seconds;
+    hours = hours < 10 ? "0" + hours : hours;
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
 
-      document.getElementById("count-down").innerHTML = days + " : " + hours + " : " + minutes + " : " + seconds;
-    }, 1000);
-  </script>
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-103807281-1', 'auto');
-    ga('send', 'pageview');
-  </script>
-</body>
+    document.getElementById("count-down").innerHTML = days + " : " + hours + " : " + minutes + " : " + seconds;
+  }, 1000);
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-103807281-1', 'auto');
+  ga('send', 'pageview');
+</script>

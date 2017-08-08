@@ -31,6 +31,9 @@ func Router() http.Handler {
 
 	router.Mount("/auth", logger(auth.GetAuthBoss().NewRouter()))
 
+	//app
+	router.Get("/product", controllers.ProductIndex)
+
 	return router
 }
 

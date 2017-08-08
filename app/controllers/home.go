@@ -1,11 +1,11 @@
 package controllers
 
 import (
-  "net/http"
+	"net/http"
 
-  "bitbucket.org/wthiti/coolbrobkk-qor/config"
+	"bitbucket.org/wthiti/coolbrobkk-qor/config/view"
 )
 
 func HomeIndex(w http.ResponseWriter, req *http.Request) {
-  config.View.Execute("home_index", map[string]interface{}{}, req, w)
+	view.View.Execute("home_index", map[string]interface{}{}, req, w)
 }
