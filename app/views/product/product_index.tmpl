@@ -1,3 +1,17 @@
-<div>
-  {{ .test }}
+<div class="section">
+  <div class="container">
+    <div class="row">
+    {{ range .product_list }}
+      <div class="col-xs-6 col-md-4">
+        <div class="product-box text-center">
+          {{ .Name }} <br />
+          {{ .Description }} <br />
+          {{ .Image }} <br />
+          {{ .Price }} <br />
+          <button type="button" class="btn btn-success"><a href="/cart/add/{{.ID}}">Buy Now</a></button>
+        </div>
+      </div>
+    {{ end }}
+    </div>
+  </div>
 </div>

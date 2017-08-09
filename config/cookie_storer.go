@@ -26,6 +26,10 @@ func NewCookieStorer(w http.ResponseWriter, r *http.Request) authboss.ClientStor
 	return &CookieStorer{w, r}
 }
 
+func GetCookieStorer(w http.ResponseWriter, r *http.Request) *CookieStorer {
+	return &CookieStorer{w, r}
+}
+
 func (s CookieStorer) Get(key string) (string, bool) {
 	cookie, err := s.r.Cookie(key)
 	if err != nil {

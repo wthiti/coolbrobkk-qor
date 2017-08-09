@@ -25,6 +25,10 @@ func NewSessionStorer(w http.ResponseWriter, r *http.Request) authboss.ClientSto
 	return &SessionStorer{w, r}
 }
 
+func GetSessionStorer(w http.ResponseWriter, r *http.Request) *SessionStorer {
+	return &SessionStorer{w, r}
+}
+
 func (s SessionStorer) Get(key string) (string, bool) {
 	session, err := sessionStore.Get(s.r, sessionCookieName)
 	if err != nil {

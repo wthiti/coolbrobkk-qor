@@ -46,8 +46,8 @@ func init() {
 	viewValueMap["test"] = "TestPassingValue"
 }
 
-func ViewValueMap() map[string]string {
-	tempMap := make(map[string]string)
+func ViewValueMap() map[string]interface{} {
+	tempMap := make(map[string]interface{})
 	for key, value := range viewValueMap {
 		tempMap[key] = value
 	}

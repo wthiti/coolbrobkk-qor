@@ -121,6 +121,23 @@ body {
   color: rgba(40,40,41,1);
 }
 
+.section {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.product-box{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 1px;
+  border-width: thin;
+  border-color: rgba(40,40,41,1);
+  border-style: solid;
+  border-radius: 16px;
+}
+
 @media(max-width:990px) {
     .transbox {
       margin-left: 0px;
