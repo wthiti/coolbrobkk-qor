@@ -2,10 +2,10 @@ package view
 
 import (
 	"html/template"
-	"log"
 	"net/http"
 	"strings"
 
+	"github.com/justinas/nosurf"
 	"github.com/microcosm-cc/bluemonday"
 	"github.com/qor/render"
 )
@@ -25,13 +25,20 @@ func init() {
 		funcMap := template.FuncMap{}
 
 		funcMap["active_menu_class"] = func(s string) string {
-			log.Println("Call active_menu_class")
 			currentMenu := strings.Split(req.URL.Path, "/")[1]
 			if s == currentMenu {
 				return "active"
-			} else {
-				return ""
 			}
+			return ""
+		}
+
+		funcMap["csrf_token"] = func() string {
+			str := nosurf.Token(req)
+			return str
+		}
+
+		funcMap["inc"] = func(i int) int {
+			return i + 1
 		}
 
 		return funcMap

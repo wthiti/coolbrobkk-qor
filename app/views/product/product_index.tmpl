@@ -1,5 +1,8 @@
 <div class="section">
   <div class="container">
+    <div class="text-right">
+      <a href="/product/cart">View Cart</a>
+    </div>
     <div class="row">
     {{ range .product_list }}
       <div class="col-xs-6 col-md-4">
@@ -8,7 +11,11 @@
           {{ .Description }} <br />
           {{ .Image }} <br />
           {{ .Price }} <br />
-          <button type="button" class="btn btn-success"><a href="/cart/add/{{.ID}}">Buy Now</a></button>
+          <form action="/cart" method="post">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token }}" />
+            <input type="hidden" name="ID" value="{{ .ID }}" />
+            <input type="submit" class="btn btn-success" value="Buy Now" />
+          </form>
         </div>
       </div>
     {{ end }}

@@ -24,7 +24,7 @@ func NewMemStorer() *MemStorer {
 			"admin@coolbrobkk.com": User{
 				ID:        1,
 				Name:      "Admin",
-				Password:  "$2a$10$XtW/BrS5HeYIuOCXYe8DFuInetDMdaarMUJEOg/VA/JAIDgw3l4aG", // pass = 1234
+				Password:  "$2a$10$3aWs.M4jQGz6JP848gkinuPEgHlgAxTbtJUYpZoQpjI0kXBHE3C5y", // pass = wehaveninepeople
 				Email:     "admin@coolbrobkk.com",
 				Confirmed: true,
 			},

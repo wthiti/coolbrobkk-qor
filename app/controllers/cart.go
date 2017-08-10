@@ -9,11 +9,15 @@ import (
 	"bitbucket.org/wthiti/coolbrobkk-qor/app/models"
 	"bitbucket.org/wthiti/coolbrobkk-qor/config"
 	"bitbucket.org/wthiti/coolbrobkk-qor/config/view"
-	"bitbucket.org/wthiti/coolbrobkk-qor/utils"
 )
 
 type Cart struct {
-	Items []Item
+	Items       []Item
+	TotalAmount int
+	Name        string
+	Address     string
+	Email       string
+	Phone       string
 }
 
 type Item struct {
@@ -26,24 +30,46 @@ func CartView(w http.ResponseWriter, req *http.Request) {
 		// db = utils.GetDB(req)
 		v = view.ViewValueMap()
 	)
+	cookieStorer := config.GetCookieStorer(w, req)
+	jsonStr, _ := cookieStorer.Get("cart")
+	customerName, _ := cookieStorer.Get("customer_name")
+	customerAddress, _ := cookieStorer.Get("customer_address")
+	customerEmail, _ := cookieStorer.Get("customer_email")
+	customerPhone, _ := cookieStorer.Get("customer_phone")
 
+	cart := Cart{}
+	json.Unmarshal([]byte(jsonStr), &cart)
+	cart.Name = customerName
+	cart.Address = customerAddress
+	cart.Email = customerEmail
+	cart.Phone = customerPhone
+
+	v["cart"] = cart
 	view.View.Execute("cart/cart_view", v, req, w)
 }
 
 func CartAdd(w http.ResponseWriter, req *http.Request) {
-	productID, _ := strconv.Atoi(utils.URLParam("ProductID", req))
-	product := GetTempProductList()[productID]
+	productID, _ := strconv.Atoi(req.FormValue("ID"))
+	product := GetTempProductList()[productID-1]
 	item := []Item{Item{Product: product, Quantity: 1}}
 	cart := &Cart{Items: item}
 	jsonStr, _ := json.Marshal(cart)
 
 	cookieStorer := config.GetCookieStorer(w, req)
-	log.Print(cookieStorer.Get("cart"))
 	cookieStorer.Put("cart", string(jsonStr))
-	log.Println(string(jsonStr))
-	http.Redirect(w, req, "/product", http.StatusOK)
+	http.Redirect(w, req, "product/cart", http.StatusFound)
 }
 
-func CardEdit(w http.ResponseWriter, req *http.Request) {
+func CartEditQuantity(w http.ResponseWriter, req *http.Request) {
+	req.ParseForm()
+	log.Println(req.Form)
+	http.Redirect(w, req, "product/cart", http.StatusFound)
+}
+
+func CartDelete(w http.ResponseWriter, req *http.Request) {
+
+}
+
+func CartConfirmOrder(w http.ResponseWriter, req *http.Request) {
 
 }

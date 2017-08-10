@@ -17,8 +17,8 @@ type CookieStorer struct {
 }
 
 func init() {
-	var hashKey = []byte("coolbrobkk-secret")
-	var blockKey = []byte("coolbrobkk-super-secret")
+	var hashKey = []byte("RTHEWMGORr89eM30dgqkUYvRTNVhPXhm")
+	var blockKey = []byte("epNOoRq69pvEJYQG")
 	cookieStore = securecookie.New(hashKey, blockKey)
 }
 

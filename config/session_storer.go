@@ -18,7 +18,7 @@ type SessionStorer struct {
 }
 
 func init() {
-	sessionStore = sessions.NewCookieStore([]byte("coolbrobkk-very-secret"))
+	sessionStore = sessions.NewCookieStore([]byte("TBUVqpL0mvq9ChxIHkIxZXK8rWuUh805"), []byte("Hkd49uFRVorMgm645"))
 }
 
 func NewSessionStorer(w http.ResponseWriter, r *http.Request) authboss.ClientStorer {
