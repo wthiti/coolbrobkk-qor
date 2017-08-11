@@ -13,6 +13,6 @@ import (
 func main() {
 	router := routes.Router()
 
-	fmt.Println("Listening on: 9000")
-	log.Println(http.ListenAndServe(":9000", context.ClearHandler(router)))
+	fmt.Println("Listening on: 80")
+	log.Println(http.ListenAndServe(":80", context.ClearHandler(router)))
 }

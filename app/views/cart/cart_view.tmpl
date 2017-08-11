@@ -1,14 +1,14 @@
 <div class="section">
   <div class="container">
     <a href="/product">&lt;--Continue Shopping</a>
-    <h3>Your Cart</h3>
-    <div class="table-responsive">
+    <h3>Preorder</h3>
+    <div class="table-responsive td-center">
       <table class="table">
         <thead>
           <tr>
             <th>&nbsp;</th>
             <th>&nbsp;</th>
-            <th>Name</th>
+            <th>&nbsp;</th>
             <th>&nbsp;</th>
             <th>&nbsp;</th>
             <th>&nbsp;</th>
@@ -17,9 +17,11 @@
         <tbody>
           {{ range $index, $element := .cart.Items }}
           <tr>
-            <td>{{ inc $index }}</td>
+            <td>&nbsp;</td>
             {{ with $element.Product }}
-            <td>{{ .Image }}</td>
+            <td><div class="product-image-box-mini center-block">
+              <img class="img-responsive" src="{{ .Image }}" />
+            </div></td>
             <td>{{ .Name }}</td>
             <td>&nbsp;</td>
             {{ end }}
@@ -30,7 +32,7 @@
         </tbody>
       </table>
     </div>
-    <h4>Delivery Information</h4>
+    <h4>Your Information</h4>
     <form class="form-horizontal" method="post" action="/product/cart/confirm">
       <div class="form-group">
         <label for="name" class="col-sm-2 control-label">Name</label>

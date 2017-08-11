@@ -27,15 +27,20 @@
       <div class="collapse navbar-collapse" id="navbar-full">
         <ul class="nav nav-tabs nav-justified text-center">
           <li class={{ active_menu_class "" }}><a href="/">What's Coolbro</a></li>
-          <li>How We Process</li>
+          <li class={{ active_menu_class "process" }}><a href="/process">How We Process</a></li>
           <li class={{ active_menu_class "product" }}><a href="/product">Our Products</a></li>
-          <li>Find Us</li>
-          <li>Contact Us</li>
+          <li class={{ active_menu_class "findus" }}><a href="/findus">Find Us</a></li>
+          <li class={{ active_menu_class "contactus" }}><a href="/contactus">Contact Us</a></li>
         </ul>
       </div>
     </div>
   </nav>
   {{ yield }}
+  <div class="container">
+    <footer class="footer">
+      <p class="text-right">&copy; 2017 BoldCrew Co., Ltd.</p>
+    </footer>
+  </div>
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

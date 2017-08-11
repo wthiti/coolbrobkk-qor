@@ -138,6 +138,23 @@ body {
   border-radius: 16px;
 }
 
+.product-image-box {
+  width: 100%;
+}
+
+.product-image-box-mini {
+  width: 25%;
+}
+
+.td-center > .table > tbody > tr > td {
+  vertical-align: middle;
+}
+
+.footer {
+  padding-top: 20px;
+  color: #777;
+}
+
 @media(max-width:990px) {
     .transbox {
       margin-left: 0px;

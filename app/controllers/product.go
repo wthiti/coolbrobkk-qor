@@ -10,34 +10,24 @@ import (
 var tempProduct []models.Product
 
 func init() {
-	tempProduct = make([]models.Product, 4)
+	tempProduct = make([]models.Product, 2)
 	tempProduct[0] = models.Product{
-		ID:          1,
-		Name:        "Test1",
-		Description: "Description1",
-		Image:       "Image1",
-		Price:       100,
+		ID:   1,
+		Name: "ORIGINAL BLACK",
+		Description: `<ul><li>INGREDIENTS : WATER, COFFEE GROUND</li>
+									<li>CALORIES ~ ZERO</li>
+									<li>CAFFEINE ~ 240 MG/BOTTLE</li></ul>`,
+		Image: "/public/assets/img/black_mini.jpg",
+		Price: 100,
 	}
 	tempProduct[1] = models.Product{
-		ID:          2,
-		Name:        "Test2",
-		Description: "Description2",
-		Image:       "Image2",
-		Price:       200,
-	}
-	tempProduct[2] = models.Product{
-		ID:          3,
-		Name:        "Test3",
-		Description: "Description3",
-		Image:       "Image3",
-		Price:       300,
-	}
-	tempProduct[3] = models.Product{
-		ID:          4,
-		Name:        "Test4",
-		Description: "Description4",
-		Image:       "Image4",
-		Price:       400,
+		ID:   2,
+		Name: "HONEY MILK",
+		Description: `<ul><li>INGREDIENTS : WATER, COFFEE GROUND, MILK, HONEY</li>
+									<li>CALORIES ~ 47  CAL/100ML</li>
+									<li>CAFFEINE ~ 157 MG/BOTTLE</li></ul>`,
+		Image: "/public/assets/img/white_mini.jpg",
+		Price: 100,
 	}
 }
 

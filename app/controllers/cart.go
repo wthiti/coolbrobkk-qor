@@ -98,10 +98,12 @@ func createPreorderMail(cart *Cart, w http.ResponseWriter, req *http.Request) {
 		Request: req,
 		Writer:  w,
 	}
+	salesEmail := "sales@coolbrobkk.com"
 	email := config.Mailer.Render(template)
-	email.TO = []mail.Address{mail.Address{Address: "thiti.wa@coolbrobkk.com"}}
-	email.From = &mail.Address{Address: "sales@coolbrobkk.com"}
-	email.Subject = "Test Preorder"
+	email.TO = []mail.Address{mail.Address{Address: cart.Email}}
+	email.From = &mail.Address{Address: salesEmail}
+	email.BCC = []mail.Address{mail.Address{Address: salesEmail}}
+	email.Subject = "Coolbro Coldbrew Preorder"
 	config.Mailer.Send(email)
 }
 
