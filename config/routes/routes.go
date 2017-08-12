@@ -25,9 +25,13 @@ func Router() http.Handler {
 	fs := http.FileServer(http.Dir("public"))
 
 	router.Get("/", controllers.HomeIndex)
+
 	router.Get("/process", controllers.ProcessIndex)
+
 	router.Get("/findus", controllers.FindUsIndex)
+
 	router.Get("/contactus", controllers.ContactUsIndex)
+	router.Post("/contactus/process", controllers.ContactUsProcess)
 
 	router.Mount("/public", http.StripPrefix("/public", fs))
 

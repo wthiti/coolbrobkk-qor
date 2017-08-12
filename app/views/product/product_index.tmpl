@@ -1,8 +1,5 @@
 <div class="section">
   <div class="container">
-    <div class="text-right">
-      <a href="/product/cart">View Cart</a>
-    </div>
     <div class="row">
     {{ range .product_list }}
       <div class="col-xs-6 col-md-6">
@@ -15,11 +12,13 @@
           <form action="/cart" method="post" class="text-center">
             <input type="hidden" name="csrf_token" value="{{ csrf_token }}" />
             <input type="hidden" name="ID" value="{{ .ID }}" />
-            <input type="submit" class="btn btn-success" value="Preorder Now" />
           </form>
         </div>
       </div>
     {{ end }}
+    </div>
+    <div class="text-center">
+      <a href="/contactus" class="btn btn-lg btn-success">Preorder Now</a>
     </div>
   </div>
 </div>
