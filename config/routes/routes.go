@@ -33,6 +33,9 @@ func Router() http.Handler {
 	router.Get("/contactus", controllers.ContactUsIndex)
 	router.Post("/contactus/process", controllers.ContactUsProcess)
 
+	router.Get("/quiz", controllers.Quiz)
+	router.Get("/quiz/facebook", controllers.QuizFacebook)
+
 	router.Mount("/public", http.StripPrefix("/public", fs))
 
 	router.Mount("/admin", middleware.AuthProtect(admin.QORAdmin.NewServeMux("/admin")))
