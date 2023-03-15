@@ -55,7 +55,7 @@ func createContactMail(contactInformation *ContactInformation, w http.ResponseWr
 		Request: req,
 		Writer:  w,
 	}
-	infoEmail := "info@coolbrobkk.com"
+	infoEmail := ""
 	email := config.Mailer.Render(template)
 	email.TO = []mail.Address{mail.Address{Address: infoEmail}}
 	email.From = &mail.Address{Address: infoEmail}
