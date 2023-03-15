@@ -22,8 +22,8 @@ type quizUser struct {
 
 func init() {
 	conf = &oauth2.Config{
-		ClientID:     "1760831864216176",
-		ClientSecret: "da5d4de292b7c858ced59b1cebf8805d",
+		ClientID:     "",
+		ClientSecret: "",
 		Scopes:       []string{"public_profile"},
 		Endpoint:     facebook.Endpoint,
 		RedirectURL:  "http://localhost:9000/quiz/facebook",
